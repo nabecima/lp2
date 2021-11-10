@@ -20,6 +20,7 @@ npm i -D webpack webpack-cli webpack-dev-server css-loader sass sass-loader post
 12. @babel/preset-env
 
 ## scripts
+package.jsonのscripts:{}に以下の内容を追記
 
 ```
 "dev": "webpack --mode development --watch",
