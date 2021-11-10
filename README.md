@@ -3,7 +3,7 @@
 ## package
 
 ```
-npm i -D webpack webpack-cli webpack-dev-server css-loader sass sass-loader postcss-loader autoprefixer babel-loader @babel/core @babel/preset-env mini-css-extract-plugin html-webpack-plugin
+npm i -D webpack webpack-cli webpack-dev-server css-loader sass sass-loader postcss-loader autoprefixer babel-loader @babel/core @babel/preset-env mini-css-extract-plugin html-webpack-plugin html-loader
 ```
 
 1. webpack
@@ -19,12 +19,13 @@ npm i -D webpack webpack-cli webpack-dev-server css-loader sass sass-loader post
 11. @babel/preset-env
 12. mini-css-extract-plugin
 13. html-webpack-plugin
+14. html-loader
 
 ## scripts
 package.jsonのscripts:{}に以下の内容を追記
 
 ```
-"dev": "webpack --mode development --watch",
+"dev": "webpack --mode development",
 "build": "webpack --mode production",
 "serve": "webpack-dev-server --mode development"
 ```
