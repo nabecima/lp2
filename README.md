@@ -3,20 +3,21 @@
 ## package
 
 ```
-npm i -D webpack webpack-cli webpack-dev-server sass sass-loader postcss-loader autoprefixer mini-css-extract-plugin babel-loader @babel/core @babel/preset-env
+npm i -D webpack webpack-cli webpack-dev-server css-loader sass sass-loader postcss-loader autoprefixer mini-css-extract-plugin babel-loader @babel/core @babel/preset-env
 ```
 
 1. webpack
 2. webpack-cli
 3. webpack-dev-server
-4. sass
-5. sass-loader
-6. postcss-loader
-7. autoprefixer
-8. mini-css-extract-plugin
-9. babel-loader
-10. @babel/core
-11. @babel/preset-env
+4. css-loader
+5. sass
+6. sass-loader
+7. postcss-loader
+8. autoprefixer
+9. mini-css-extract-plugin
+10. babel-loader
+11. @babel/core
+12. @babel/preset-env
 
 ## scripts
 
