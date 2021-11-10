@@ -3,7 +3,7 @@
 ## package
 
 ```
-npm i -D webpack webpack-cli webpack-dev-server sass sass-loder postcss-loader autoprefixer mini-css-extract-plugin babel-loader @babel/core @babel/preset-env
+npm i -D webpack webpack-cli webpack-dev-server sass sass-loader postcss-loader autoprefixer mini-css-extract-plugin babel-loader @babel/core @babel/preset-env
 ```
 
 1. webpack
