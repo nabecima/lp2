@@ -1,12 +1,13 @@
 const path = require("path");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
   entry: "./src/index.js",
 
   output: {
     path: path.resolve(__dirname, "dist"),
-    filename: "bundle.js",
+    filename: "js/bundle.js",
     assetModuleFilename: "images/[name][ext]",
   },
 
@@ -31,7 +32,6 @@ module.exports = {
               },
             },
           },
-          "postcss-loader",
           "sass-loader",
         ],
       },
@@ -39,12 +39,17 @@ module.exports = {
       {
         test: /\.js$/,
         exclude: /nodemodules/,
-        loader: {
+        use: {
           loader: "babel-loader",
           options: {
             presets: ["@babel/preset-env"],
           },
         },
+      },
+
+      {
+        test: /\.html$/,
+        use: ["html-loader"],
       },
 
       {
@@ -57,6 +62,11 @@ module.exports = {
   plugins: [
     new MiniCssExtractPlugin({
       filename: "css/style.css",
+    }),
+
+    new HtmlWebpackPlugin({
+      template: "./src/index.html",
+      inject: "body",
     }),
   ],
 
