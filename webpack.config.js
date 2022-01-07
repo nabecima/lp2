@@ -32,7 +32,13 @@ module.exports = {
               },
             },
           },
-          "sass-loader",
+          {
+            loader: "sass-loader",
+            options: {
+              // ローダーに dart-sass を使用することを明示的に指定
+              implementation: require("sass")
+            }
+          }
         ],
       },
 
