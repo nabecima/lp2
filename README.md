@@ -3,6 +3,7 @@
 ## package
 
 ```
+npm init -y
 npm i -D webpack webpack-cli webpack-dev-server css-loader sass sass-loader postcss-loader autoprefixer babel-loader @babel/core @babel/preset-env mini-css-extract-plugin html-webpack-plugin html-loader
 ```
 
