@@ -1,0 +1,68 @@
+@use "../global" as g;
+.l-nav {
+  position: relative;
+  &__links {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: 1;
+  }
+
+  &__item {
+    position: relative;
+    &:not(:last-child)::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      right: 0;
+      transform: translateY(-50%);
+      display: block;
+      width: 1px;
+      height: 20px;
+      background-color: g.$white;
+    }
+  }
+
+  &__link {
+    padding: 18px 0;
+    width: 100%;
+    color: g.$white;
+    font-size: 1.6rem;
+    font-weight: 400;
+    text-align: center;
+    background-color: g.$primary;
+  }
+
+  @include g.mq() {
+    &__links {
+      position: absolute;
+      width: 100%;
+      left: -100%;
+      grid-template-columns: 1fr;
+      grid-template-rows: 6;
+      min-height: calc(100vh - 51px);
+      transition: all 0.3s ease-in-out;
+
+      // mediaクエリー内で@extendを使うとエラーになる
+      // $this: &;
+      // &.is-active {
+      //   @extend #{$this};
+      // }
+    }
+
+    &__links.is-active {
+      left: 0;
+    }
+
+    &__item::after {
+      display: none !important;
+    }
+
+    &__link {
+      padding: 0;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}
