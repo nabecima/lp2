@@ -3,6 +3,7 @@
   background-color: g.$white;
   &__container {
     position: relative;
+    max-width: 1298px !important;
     height: 75px;
     display: grid;
     grid-template-columns: auto 1fr;
