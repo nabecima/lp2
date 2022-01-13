@@ -1,7 +1,7 @@
 @use "../global" as g;
 .p-hero {
   padding: 64px 0 28.7px;
-  min-height: calc(100vh - 75px - 54.3px);
+  // min-height: calc(100vh - 75px - 54.3px);
   background-color: g.$offWhite;
 
   &__head {
