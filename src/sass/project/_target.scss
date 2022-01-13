@@ -1,0 +1,152 @@
+@use "../global" as g;
+.p-target {
+  padding: 91px 0 80px;
+  background-image: url(../images/targetbg.png);
+  background-size: cover;
+
+  &__head {
+    position: relative;
+    margin-bottom: 78px;
+    font-size: 4rem;
+    line-height: 1.2;
+    letter-spacing: 0.1em;
+    text-align: center;
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      bottom: -17.5px;
+      transform: translateX(-50%);
+      display: block;
+      width: 118px;
+      height: 5px;
+      background-color: g.$secondary;
+    }
+  }
+
+  &__cards {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(350px, 548px));
+    grid-template-rows: 1;
+    gap: 5.14%;
+  }
+
+  &__card {
+    margin-bottom: 98px;
+    padding: 47px 0;
+    text-align: center;
+    border: 3px solid g.$gray;
+    border-radius: 1px;
+    background-color: g.$white;
+    box-shadow: 12px 12px g.$secondary;
+  }
+
+  &__subhead {
+    margin-bottom: 24px;
+    color: g.$primary;
+    font-size: 2.5rem;
+    font-weight: bold;
+    letter-spacing: 0.1em;
+  }
+
+  &__card-body {
+    font-size: 2.5rem;
+    letter-spacing: 0.1em;
+
+    span {
+      color: g.$orange;
+
+      &:first-child {
+        font-size: 7rem;
+      }
+    }
+  }
+
+  &__desc {
+    text-align: center;
+
+    &:first-of-type {
+      margin-bottom: 44px;
+      font-size: 2.4rem;
+      line-height: 1.2;
+      letter-spacing: 0.1em;
+    }
+
+    &:last-of-type {
+      margin-bottom: 77px;
+      font-size: 1.8rem;
+      line-height: 1.66;
+      letter-spacing: 0.05em;
+    }
+  }
+
+  &__expire {
+    display: flex;
+    justify-content: center;
+
+    p {
+      padding: 57px 0;
+      font-size: 3rem;
+      text-align: center;
+      border: 3px solid g.$black_3;
+
+      &:first-child {
+        width: 269px;
+        color: g.$white;
+        background-color: g.$black_2;
+      }
+
+      &:last-child {
+        width: 422px;
+        color: g.$red;
+        background-color: g.$clearWhite;
+      }
+    }
+  }
+
+  @include g.mq() {
+    padding: 49px 0 40px;
+
+    &__head {
+      margin-bottom: 66px;
+      font-size: 3.2rem;
+    }
+
+    &__cards {
+      margin-bottom: 75px;
+      grid-template-columns: 98.5%;
+      grid-template-rows: 2;
+      gap: 46px;
+    }
+
+    &__card {
+      margin-bottom: 0;
+    }
+
+    &__desc {
+      &:first-of-type {
+        margin-bottom: 21.5px;
+        font-size: 2.4rem;
+      }
+
+      &:last-of-type {
+        margin-bottom: 69px;
+        font-size: 1.4rem;
+      }
+    }
+
+    &__expire {
+      flex-wrap: wrap;
+      flex-direction: column;
+      p {
+        padding: 31px 0;
+
+        &:first-child,
+        &:last-child {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
