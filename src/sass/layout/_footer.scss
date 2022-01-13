@@ -1,0 +1,17 @@
+@use "../global" as g;
+.l-footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 45px;
+  color: g.$white;
+  font-size: 1.4rem;
+  letter-spacing: 0.1em;
+  text-align: center;
+  background-color: g.$primary;
+
+  @include g.mq() {
+    height: 50px;
+    font-size: 1.6rem;
+  }
+}
