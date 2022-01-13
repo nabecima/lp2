@@ -1,8 +1,15 @@
 @use "../global" as g;
 .p-target {
   padding: 91px 0 80px;
-  background-image: url(../images/targetbg.png);
   background-size: cover;
+
+  .webp & {
+    background-image: url(../images/targetbg.webp);
+  }
+
+  .no-webp & {
+    background-image: url(../images/targetbg.png);
+  }
 
   &__head {
     position: relative;
