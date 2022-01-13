@@ -1,0 +1,5 @@
+@use "../global" as g;
+.c-button {
+  color: g.$white;
+  background-color: g.$primary;
+}
