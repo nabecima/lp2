@@ -1,0 +1,7 @@
+@use "../global" as g;
+.u-break {
+  display: none;
+  @include g.mq() {
+    display: block;
+  }
+}

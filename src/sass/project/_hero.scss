@@ -1,0 +1,166 @@
+@use "../global" as g;
+.p-hero {
+  padding: 64px 0 28.7px;
+  min-height: calc(100vh - 75px - 54.3px);
+  background-color: g.$offWhite;
+
+  &__head {
+    margin-bottom: 57px;
+    font-size: 4.8rem;
+    font-weight: bold;
+    line-height: 1.5;
+    letter-spacing: 0.2em;
+    text-align: center;
+  }
+
+  &__content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1;
+  }
+
+  &__subhead {
+    margin: 0 auto;
+    padding: 13px 0;
+    color: g.$white;
+    font-size: 4.3rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-align: center;
+    border-radius: 50px;
+    $this: &;
+
+    &--orange {
+      @extend #{$this};
+      margin-bottom: 16.1px;
+      max-width: 633px;
+      background-color: g.$orange;
+    }
+    &--lime {
+      @extend #{$this};
+      margin-top: 14.4px;
+      margin-bottom: 31px;
+      max-width: 473px;
+      background-color: g.$lime;
+    }
+  }
+
+  &__times {
+    margin: 0 auto;
+    width: 33px;
+    height: 33px;
+  }
+
+  &__desc {
+    margin: 0 auto 31.3px;
+    max-width: 473px;
+    font-size: 2.5rem;
+    line-height: 1.8;
+    letter-spacing: 0.05em;
+    text-align: center;
+  }
+
+  &__btn {
+    display: block;
+    margin: 0 auto;
+    padding: 23.5px 0;
+    max-width: 424px;
+    width: 100%;
+    font-size: 1.8rem;
+    line-height: 1.78;
+    letter-spacing: 0.18em;
+    text-align: center;
+    border-radius: 4px;
+
+    svg {
+      margin-left: 23.1px;
+      vertical-align: baseline;
+    }
+  }
+
+  &__img {
+    align-self: flex-end;
+  }
+
+  @include g.mq() {
+    padding: 49px 0 40px;
+
+    &__head {
+      font-size: 4rem;
+    }
+
+    &__content {
+      grid-template-columns: 1fr;
+      grid-template-rows: 2;
+    }
+
+    &__head {
+      margin-bottom: 29px;
+    }
+
+    &__body {
+      order: 2;
+    }
+
+    &__img {
+      order: 1;
+      margin-bottom: 30px;
+      width: 70%;
+      justify-self: center;
+    }
+
+    &__times {
+      width: 25px;
+      height: 25px;
+    }
+  }
+
+  @include g.mq(sm) {
+    &__head {
+      font-size: 3rem;
+    }
+
+    &__subhead {
+      padding: 8.5px 0;
+      max-width: none;
+      font-size: 1.8rem;
+      line-height: 1.22;
+      letter-spacing: 0.1em;
+
+      &--orange {
+        margin-bottom: 10px;
+      }
+
+      &--lime {
+        margin-top: 10px;
+        margin-bottom: 19px;
+      }
+    }
+
+    &__times {
+      width: 17.86px;
+      height: 17.86px;
+    }
+
+    &__desc {
+      margin-bottom: 57px;
+      width: 87.7%;
+      max-width: none;
+      font-size: 1.4rem;
+      font-weight: bold;
+      line-height: 1.5;
+      letter-spacing: 0.1em;
+    }
+
+    &__btn {
+      max-width: none;
+      width: 100%;
+      font-size: 1.6rem;
+      border-radius: 19px;
+
+      svg {
+        margin-left: 14px;
+      }
+    }
+  }
+}
