@@ -1,6 +1,9 @@
 @use "../global" as g;
 .l-nav {
-  position: relative;
+  position: sticky;
+  top: 75px;
+  z-index: 5;
+  box-shadow: 0 -4px 20px;
   &__links {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
@@ -33,6 +36,10 @@
   }
 
   @include g.mq() {
+    position: fixed;
+    top: 51px;
+    width: 100%;
+    box-shadow: unset;
     &__links {
       position: absolute;
       width: 100%;
