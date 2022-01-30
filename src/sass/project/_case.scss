@@ -77,19 +77,30 @@
   }
 
   &__table-wrapper {
-    // width: 100%;
-    overflow-x: scroll;
+    @media screen and(max-width:1134px) {
+      overflow-x: scroll;
+    }
   }
 
   &__table {
-    width: 1166px;
-    border-spacing: 20px 9.7px;
-    overflow-x: scroll;
+    table-layout: fixed;
 
     th,
     td {
-      vertical-align: middle;
-      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    tr {
+      display: grid;
+      grid-template-columns: 197px 1fr 1fr 1fr 1fr;
+      grid-template-rows: 87px;
+      column-gap: 18px;
+
+      &:not(:last-of-type) {
+        margin-bottom: 10px;
+      }
     }
   }
 
@@ -107,8 +118,6 @@
 
     &--col {
       @extend #{$this};
-      width: 223px;
-      height: 87px;
       font-size: clamp(1.8rem, 5vw, 2.2rem);
       line-height: 1.18;
       background-color: g.$orange-sub;
@@ -118,9 +127,7 @@
       @extend #{$this};
       position: sticky;
       left: 0;
-      width: 197px;
-      height: 74px;
-      font-size: clamp(1.4rem, 5vw, 1.8rem);
+      font-size: clamp(1.4rem, 2vw, 1.8rem);
       line-height: 1.79;
       background-color: g.$secondary;
     }
@@ -151,15 +158,28 @@
       margin-bottom: 20px;
     }
 
-    &__table-head {
-      &--col {
-        width: 160px;
-      }
+    &__table {
+      tr {
+        grid-template-columns: 140px 160px 160px 160px 160px;
+        grid-template-rows: 87px;
+        column-gap: 10px;
 
-      &--row {
-        width: 140px;
+        &:not(:first-of-type) {
+          grid-template-columns: 140px 160px 160px 160px 160px;
+          grid-template-rows: 74px;
+        }
       }
     }
+
+    // &__table-head {
+    //   &--col {
+    //     width: 160px;
+    //   }
+
+    //   &--row {
+    //     width: 140px;
+    //   }
+    // }
   }
 
   @include g.mq(sm) {
