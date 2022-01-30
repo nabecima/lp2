@@ -1,0 +1,172 @@
+@use "../global" as g;
+.p-case {
+  padding: clamp(47px, 5vw, 91px) 0 clamp(40px, 5vw, 80px);
+
+  &__container {
+    max-width: 1166px !important;
+  }
+
+  &__head {
+    margin-bottom: clamp(34.8px, 5vw, 147px);
+    font-size: clamp(2.4rem, 5vw, 4rem);
+    font-weight: bold;
+    letter-spacing: 0.2em;
+    line-height: 1.725;
+    text-align: center;
+  }
+
+  &__services {
+    margin-bottom: clamp(40px, 5vw, 110px);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 2;
+    column-gap: 6.17%;
+    row-gap: 64px;
+  }
+
+  &__service {
+    align-self: flex-end;
+  }
+
+  &__thumb {
+    margin-bottom: clamp(30px, 5vw, 59.7px);
+  }
+
+  &__title {
+    padding: 24.5px 0;
+    margin-bottom: 10px;
+    color: g.$white;
+    font-size: clamp(2rem, 5vw, 2.5rem);
+    font-weight: bold;
+    letter-spacing: 0.05em;
+    line-height: 1.52;
+    text-align: center;
+    background-color: g.$primary;
+  }
+
+  &__costs {
+    margin-bottom: clamp(20px, 5vw, 64px);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1;
+    column-gap: 2.47%;
+  }
+
+  &__cost {
+    $this: &;
+    padding: 20px 0;
+    font-size: 1.8rem;
+    font-weight: bold;
+    line-height: 1;
+    text-align: center;
+    border: 2px solid g.$primary;
+
+    &--initial {
+      @extend #{$this};
+    }
+
+    &--monthly {
+      @extend #{$this};
+      color: g.$red;
+    }
+  }
+
+  &__desc {
+    font-size: clamp(1.4rem, 5vw, 1.8rem);
+    line-height: 1.66;
+  }
+
+  &__table-wrapper {
+    // width: 100%;
+    overflow-x: scroll;
+  }
+
+  &__table {
+    width: 1166px;
+    border-spacing: 20px 9.7px;
+    overflow-x: scroll;
+
+    th,
+    td {
+      vertical-align: middle;
+      text-align: center;
+    }
+  }
+
+  &__table-head {
+    $this: &;
+    color: g.$white;
+    font-weight: bold;
+    letter-spacing: 0.1em;
+
+    &--empty {
+      position: sticky;
+      left: 0;
+      background-color: #fff;
+    }
+
+    &--col {
+      @extend #{$this};
+      width: 223px;
+      height: 87px;
+      font-size: clamp(1.8rem, 5vw, 2.2rem);
+      line-height: 1.18;
+      background-color: g.$orange-sub;
+    }
+
+    &--row {
+      @extend #{$this};
+      position: sticky;
+      left: 0;
+      width: 197px;
+      height: 74px;
+      font-size: clamp(1.4rem, 5vw, 1.8rem);
+      line-height: 1.79;
+      background-color: g.$secondary;
+    }
+  }
+
+  &__table-cell {
+    $this: &;
+    font-size: clamp(1.4rem, 5vw, 1.6rem);
+    font-weight: bold;
+    line-height: 1.56;
+    letter-spacing: 0.1em;
+    background-color: g.$pale-orange;
+
+    &--circle {
+      @extend #{$this};
+      color: g.$orange-sub2;
+      font-size: 2.8rem;
+    }
+  }
+
+  @include g.mq {
+    &__services {
+      grid-template-columns: 1fr;
+      grid-template-rows: 4;
+    }
+
+    &__title {
+      margin-bottom: 20px;
+    }
+
+    &__table-head {
+      &--col {
+        width: 160px;
+      }
+
+      &--row {
+        width: 140px;
+      }
+    }
+  }
+
+  @include g.mq(sm) {
+    &__costs {
+      grid-template-columns: 1fr;
+      grid-template-rows: 2;
+      row-gap: 20px;
+    }
+  }
+}
