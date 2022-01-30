@@ -17,8 +17,7 @@
 
   &__question {
     display: flex;
-    // align-items: flex-end;
-    padding: clamp(25px, 5vw, 27px) 0 16px clamp(10px, 5vw, 20px);
+    padding: clamp(25px, 5vw, 27px) clamp(10px, 5vw, 20px) 16px;
     color: g.$white;
     font-size: clamp(1.8rem, 5vw, 2rem);
     font-weight: bold;
