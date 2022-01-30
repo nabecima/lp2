@@ -297,7 +297,7 @@
             <p class="p-contact__desc">
               24時間以内に弊社、制作担当よりご連絡いたします。
             </p>
-            <div class="p-contact__form">
+            <form class="p-contact__form">
               <div class="p-contact__form-control">
                 <label for="company_name">会社名</label
                 ><input type="text" id="company_name" />
@@ -316,10 +316,10 @@
               </div>
               <div class="p-contact__form-control--require">
                 <label for="message">お問い合わせ内容</label>
-                <textarea id="message"></textarea>
+                <textarea id="message" required></textarea>
               </div>
               <button class="p-contact__button c-button">確認する</button>
-            </div>
+            </form>
           </div>
         </section>
       </article>
